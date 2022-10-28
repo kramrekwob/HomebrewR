@@ -1,0 +1,68 @@
+<%- include('partials/header') -%>
+<div class="container-fluid">
+  <div class="row align-items-center justify-content-center mt-5">
+      <h2 class="text-center"><%= post.title %></h2>
+      <img class="img-fluid col-sm-5 " src="<%= post.image%>" />
+      <div class="col-5 mt-5">
+        <h4>RECIPE</h4>
+        <h5>Created By: <%= user.id%> </h5>
+          <div>
+           <p>  <%= post.batchSize %> Gallons</p>
+            <p> <%= post.hopIngredients %></p>
+            <p> <%= post.maltIngredients %></p>
+            <p> <%= post.mashSchedule %></p>
+            <p> <%= post.waterAdjustments %></p>
+            <p> <%= post.yeast %></p>
+            <p> <%= post.notes %> </p>
+      </div>
+      </div>
+      <div class="col-sm-5 ml-2">
+        <div class="row justify-content-center">
+        <form
+          class="col-3"
+          action="/post/likePost/<%= post.id %>?_method=PUT"
+          method="POST"
+        >
+          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+        </form>
+        <h4 class="col-3">Likes: <%= post.likes %></h4>
+        <%if(post.user == user.id){ %>
+        <form
+          action="/post/deletePost/<%= post.id %>?_method=DELETE"
+          method="POST"
+          class="col-3">
+          <button class="btn btn-danger fa fa-trash" type="submit">Delete</button>
+        </form>
+        <%}%>
+      </div>
+      </div>
+      <div class="comments">
+        <% for(var i=0; i<comments.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <span> <%= comments[i].comment %> </span> 
+            <%if(post.user == user.id){ %>
+              <form action="/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE" method="POST" class="col-1"> 
+                <button class="btn btn-danger fa fa-trash" type="submit">Delete</button>
+              </form> <% } %>
+          </li>
+        <% } %>
+        </div>
+        <div>
+        <h2>Add a Comment</h2>
+            <form action="/comment/createComment/<%=post._id %>" method="POST">
+              <div class="mb-3">
+                  <label for="comment" class="form-label">Comment:</label>
+                  <input type="text" class="form-control" id="comment" name="comment">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+    <div class="col-6 justify-content-center">
+      <a class="btn btn-primary" href="/profile">Return to Profile</a>
+      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+    </div>
+</div>
+</div>
+
+<%- include('partials/footer') -%>

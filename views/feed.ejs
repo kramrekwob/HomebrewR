@@ -6,7 +6,7 @@
           <li class="col-6 justify-content-between mt-5">
             <span> <% posts[i].title %> </span>
             <a href="/post/<%= posts[i]._id%>">
-              <img class="rounded float-right" src="<%= posts[i].image%>">
+              <img class="rounded float-right mainFeedPhotos" style="max-width:300px" src="<%= posts[i].image%>">
             </a>
           </li>
         <% } %>

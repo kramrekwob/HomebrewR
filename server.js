@@ -15,7 +15,7 @@ const commentRoutes = require("./routes/comments");
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
-// Passport config
+// Passport configs
 require("./config/passport")(passport);
 
 //Connect To Database
@@ -56,6 +56,9 @@ app.use(passport.session());
 //Use flash messages for errors
 app.use(flash());
 
+//Allow use of public folder
+app.use(express.static("public"));
+
 // Server Is Listening to main route, post route, comments
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
@@ -63,5 +66,5 @@ app.use("/comment", commentRoutes)
 
 //Server Running
 app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better go catch it!");
+  console.log(`Server is running on port ${process.env.PORT}, you better go catch it!`);
 });

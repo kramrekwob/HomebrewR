@@ -1,13 +1,15 @@
 <%- include('partials/header') -%>
   <div class="container">
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-left align-items-end mt-1">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <span> <% posts[i].title %> </span>
+          <li class="col-3 justify-content-between mt-1 card-body h-100">
+            <h5 class="card-title"> <%= posts[i].title %> </h5>
             <a href="/post/<%= posts[i]._id%>">
-              <img class="rounded float-right mainFeedPhotos" style="max-width:300px" src="<%= posts[i].image%>">
+              <img class="rounded mainFeedPhotos card-img-top" style="max-height:300px" src="<%= posts[i].image%>">
             </a>
+          <span> <%= posts[i].notes %> <span>
+          <div class="card-footer"> <%= posts[i].likes %> Likes </div>
           </li>
         <% } %>
         </ul>

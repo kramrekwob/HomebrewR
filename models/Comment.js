@@ -1,3 +1,4 @@
+//commonJS requiring mongoose schema
 const mongoose = require("mongoose");
 
 const CommentSchema = new mongoose.Schema({
@@ -13,6 +14,8 @@ const CommentSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
       },
+    //add username 
+    
     });
     
 module.exports = mongoose.model("Comment", CommentSchema);

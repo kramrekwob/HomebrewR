@@ -14,15 +14,15 @@ module.exports = {
       console.log(err);
     }
   },
-  deleteComment: async (req, res) => {
+  // deleteComment: async (req, res) => {
 
-    try {
-      // Delete comment from db
-      await Comment.findOneAndDelete({ _id: req.params.id });
-      console.log("Deleted Post");
-      res.redirect("/");
-    } catch (err) {
-      res.redirect("/profile");
-    }
-  }
+  //   try {
+  //     // Delete comment from db
+  //     await Comment.findOneAndDelete({ _id: req.params.id });
+  //     console.log("Deleted Post");
+  //     res.redirect("/");
+  //   } catch (err) {
+  //     res.redirect("/profile");
+  //   }
+  // }
 }

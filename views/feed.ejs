@@ -5,6 +5,7 @@
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-3 justify-content-between mt-1 card-body h-100">
             <h5 class="card-title"> <%= posts[i].title %> </h5>
+            <p class="card-text">  <%= userName[i]%> </p>
             <a href="/post/<%= posts[i]._id%>">
               <img class="rounded mainFeedPhotos card-img-top" style="max-height:300px" src="<%= posts[i].image%>">
             </a>

@@ -22,7 +22,7 @@ const CommentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-    //add username 
+//Add username 
   createdBy: {
       type: String,
       ref: "User",

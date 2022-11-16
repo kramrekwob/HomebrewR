@@ -2,10 +2,10 @@
 <div class="container-fluid">
   <div class="row align-items-center justify-content-center mt-5">
       <h2 class="text-center"><%= post.title %></h2>
-      <div class="col-sm-5">
+      <div class="col-sm-6 mx-auto">
       <img class="img-fluid mt-5 " src="<%= post.image%>" />
- <div class="mt-3 mr-3">
-        <div class="row justify-content-center">
+ <div class="mt-3">
+        <div class="row justify-content-around no-gutters">
         <form
           class="col-4"
           action="/post/likePost/<%= post.id %>?_method=PUT"
@@ -25,9 +25,9 @@
       </div>
       </div>
       </div>
-      <div class="col-5 mt-5">
+      <div class="col-sm-6 mx-auto">
         <h4>RECIPE</h4>
-        <h5>Created By: <%= post.createdBy%> </h5>
+        <h5>Created By: <%= author.userName %> </h5>
           <div>
            <p>  <%= post.batchSize %> Gallons</p>
             <p> <%= post.hopIngredients %></p>

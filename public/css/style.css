@@ -7,3 +7,7 @@ i{
 .navbar-brand{
     margin-left:15px;
 }
+.card {
+    margin-right: .25rem !important ;
+    margin-left: .25rem !important;
+}

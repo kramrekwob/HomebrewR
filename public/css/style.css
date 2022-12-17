@@ -1,5 +1,6 @@
 body{
-    background-color: whitesmoke;
+    color:  rgb(20,36,87);
+    background-color: rgb(241,241,241);
 }
 i{
     size:40px;
@@ -10,4 +11,16 @@ i{
 .card {
     margin-right: .25rem !important ;
     margin-left: .25rem !important;
+    min-height: 550px;
+    
+
+}
+.nav-link-primary, .navbar-text-primary{
+    text-decoration: none;
+    margin-right: 1rem;
+    font-weight: 600;
+}
+.btn-primary{
+    min-inline-size:120px;
+    max-inline-size:300px;
 }

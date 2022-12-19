@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
 body{
+    font-family: 'Titillium Web', sans-serif;
     color:  rgb(20,36,87);
     background-color: rgb(241,241,241);
 }
@@ -18,6 +20,7 @@ i{
 .nav-link-primary, .navbar-text-primary{
     text-decoration: none;
     margin-right: 1rem;
+    font-size:larger;
     font-weight: 600;
 }
 .btn-primary{

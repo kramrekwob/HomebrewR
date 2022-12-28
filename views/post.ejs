@@ -4,14 +4,13 @@
       <h2 class="text-center"><%= post.title %></h2>
       <div class="col-sm-6 mx-auto">
       <img class="img-fluid mt-5 " src="<%= post.image%>" />
- <div class="mt-3">
-        <div class="row justify-content-around no-gutters">
+        <div class="row justify-content-between no-gutters">
         <form
           class="col-4"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-heart"></i></button>
         </form>
         <h4 class="col-4">Likes: <%= post.likes %></h4>
         <%if(post.user == user.id){ %>
@@ -19,10 +18,9 @@
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
           class="col-4">
-          <button class="btn btn-danger fa fa-trash" type="submit">Delete</button>
+          <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
         </form>
         <%}%>
-      </div>
       </div>
       </div>
       <div class="col-sm-6 mx-auto px-auto">
@@ -41,9 +39,8 @@
      
       <ul class="pl-5 p-2">
         <% for(var i=0; i<comments.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <span> <%= comments[i].createdBy %> :</span>
-            <span> <%= comments[i].comment %> </span> 
+          <li class="row justify-content-start mt-5">
+            <span class="col-6"> <%= comments[i].createdBy %> :  <%= comments[i].comment %> </span>
             
             <%if (comments[i].createdById == user.id){ %>
               <form action="/comment/deleteComment/<%= post.id%>/<%= comments[i]._id %>?_method=DELETE" method="POST" class="col-1"> 

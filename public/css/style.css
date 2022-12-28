@@ -24,6 +24,6 @@ i{
     font-weight: 600;
 }
 .btn-primary{
-    min-inline-size:120px;
+    min-inline-size:80px;
     max-inline-size:300px;
 }

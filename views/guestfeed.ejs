@@ -1,0 +1,20 @@
+<%- include('partials/header') -%>
+  <div class="container card-container">
+    <h1 class="text-center mt-4"> Explore Recipes </h1>
+    <h3 class="text-center">Note: Guests Need to Sign In To Like or View Comments</h3>
+    <div class="row row-cols-1 row-cols-md-4 row-cols-xl-5 mt-1 justify-content-between align-self-stretch ">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <div class="card mt-3">
+            <h5 class="card-title mt-2"> <%= posts[i].title %> </h5>
+            <p class="card-text">By:  <%= userName[i]%> </p>
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="rounded mainFeedPhotos card-img-top" style="max-height:300px" src="<%= posts[i].image%>">
+            </a>
+          <span> <%= posts[i].notes %> <span>
+          <div class="card-footer"> <%= posts[i].likes %> Likes </div>
+          <span class="badge bg-secondary"> <%= posts[i].createdAt.toLocaleDateString() %></span>
+          </div>
+        <% } %>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>

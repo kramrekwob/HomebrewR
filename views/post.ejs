@@ -44,7 +44,7 @@
             
             <%if (comments[i].createdById == user.id){ %>
               <form action="/comment/deleteComment/<%= post.id%>/<%= comments[i]._id %>?_method=DELETE" method="POST" class="col-1"> 
-                <button class="btn btn-danger fa fa-trash" type="submit">Delete</button>
+                <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
               </form> <% } %>
           </li>
         <% } %>

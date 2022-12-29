@@ -1,0 +1,41 @@
+<%- include('partials/header') -%>
+<div class="container-fluid">
+  <div class="row align-items-center justify-content-center mt-5">
+      <h2 class="text-center"><%= post.title %></h2>
+      <div class="col-sm-6 mx-auto">
+      <img class="img-fluid mt-5 " src="<%= post.image%>" />
+        <div class="row justify-content-center no-gutters">
+        <h4 class="col-4">Likes: <%= post.likes %></h4>
+        <h5 class="row justify-content-start">Comments:</h5>
+        <ul class="p-2">
+            <% for(var i=0; i<comments.length; i++) {%>
+              <li class="row justify-content-start mt-2 mx-1">
+                <div class="card">
+                <span class="text-decoration-underline card-title"> <%= comments[i].createdBy %></span><span><%= comments[i].comment %> </span>
+                </li>
+                <div>
+            <% } %>
+            </ul>
+      </div>
+      </div>
+      <div class="col-sm-6 mx-auto px-auto">
+        <h4>RECIPE</h4>
+        <h5>Created By: <%= author.userName %> </h5>
+          <div>
+           <p>  <%= post.batchSize %> Gallons</p>
+            <p> <%= post.hopIngredients %></p>
+            <p> <%= post.maltIngredients %></p>
+            <p> <%= post.mashSchedule %></p>
+            <p> <%= post.waterAdjustments %></p>
+            <p> <%= post.yeast %></p>
+            <p> <%= post.notes %> </p>
+      </div>
+      </div>
+        </div>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/guest">Return to Feed</a>
+    </div>
+
+</div>
+
+<%- include('partials/footer') -%>

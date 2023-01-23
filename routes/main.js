@@ -6,7 +6,7 @@ const postsController = require("../controllers/posts");
 const guestController = require("../controllers/guest")
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Main Routes 
+// main Routes 
 router.get("/", homeController.getIndex);
 router.get("/guest", ensureGuest, guestController.getFeed);
 router.get("/guest/:id", ensureGuest, guestController.getPost);
